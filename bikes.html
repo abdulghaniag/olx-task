@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bike for Sale</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #f0f2f5;
+      padding: 40px 20px;
+    }
+
+    .bike-card {
+      background: #fff;
+      display: flex;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      max-width: 1200px;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+    }
+
+    .left-section {
+      width: 45%;
+      background: #e8f0fe;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .left-section img {
+      width: 100%;
+      max-height: 400px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .price-list {
+      width: 100%;
+    }
+
+    .price-list li {
+      list-style: none;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      background: #fff;
+      border-left: 5px solid #ff5722;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      font-weight: 500;
+      border-radius: 6px;
+    }
+
+    .right-section {
+      width: 55%;
+      padding: 30px;
+    }
+
+    .right-section h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #222;
+    }
+
+    .bike-detail {
+      margin-bottom: 16px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .bike-detail i {
+      color: #ff5722;
+      margin-right: 10px;
+    }
+
+    .description {
+      background: #fff;
+      margin: 30px auto 0;
+      padding: 25px 30px;
+      border-radius: 12px;
+      max-width: 1200px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      line-height: 1.6;
+      font-size: 16px;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .bike-card {
+        flex-direction: column;
+      }
+
+      .left-section,
+      .right-section {
+        width: 100%;
+      }
+
+      .description {
+        padding: 20px;
+      }
+    }
+    .home-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 10px 18px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.home-link:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+</head>
+<body>
+
+    <a href="./index.html" class="home-link">← Back to Home</a>
+
+  <div class="bike-card">
+    <!-- Left Section -->
+    <div class="left-section">
+      <img src="./images/bike--sell.jpg" alt="Bike for Sale" />
+      <ul class="price-list">
+        <li>Honda CG 125 - Rs. 180,000</li>
+        <li>Yamaha YBR 125 - Rs. 290,000</li>
+        <li>Honda CB 150F - Rs. 420,000</li>
+      </ul>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <h2>Yamaha YBR 125G - 2024 Model</h2>
+      <div class="bike-detail"><i class="fas fa-motorcycle"></i> Engine: 124cc, 4-stroke</div>
+      <div class="bike-detail"><i class="fas fa-gas-pump"></i> Fuel Capacity: 13L</div>
+      <div class="bike-detail"><i class="fas fa-road"></i> Mileage: 45-50 km/l</div>
+      <div class="bike-detail"><i class="fas fa-cogs"></i> Transmission: 5-Speed Manual</div>
+      <div class="bike-detail"><i class="fas fa-calendar-alt"></i> Model Year: 2024</div>
+      <div class="bike-detail"><i class="fas fa-check-circle"></i> Condition: Brand New</div>
+      <div class="bike-detail"><i class="fas fa-star"></i> Rating: 4.7/5</div>
+    </div>
+  </div>
+
+  <!-- Description Section -->
+  <div class="description">
+    <h3 style="margin-bottom: 15px; color: #111;">Bike Overview</h3>
+    The Yamaha YBR 125G is a stylish and powerful motorbike designed for both daily commuting and adventurous rides. With a sleek design, comfortable seat, and impressive road grip, this model is popular among youth. Whether it's city riding or off-road experience, the YBR 125G delivers both comfort and performance.
+  </div>
+
+</body>
+</html>

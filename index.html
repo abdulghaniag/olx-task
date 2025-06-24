@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLX-Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #nav{
+           background-color: rgb(241, 239, 239);
+           width: 100%;
+           height: 70px;
+           display: flex;
+           /* border: 2px solid rgb(15, 254, 51); */
+        }
+        #logo img{
+           margin-left: 120px;
+        }
+        #nav-left{
+            display: flex;
+            width: 100%;
+        }
+/* #nav-right {
+  width: 100%;
+  display: flex;               
+  align-items: center;         
+  margin-left: 750px;
+} */
+
+#nav-right {
+  width: auto;
+  display: flex;               
+  align-items: center;         
+  gap: 10px; 
+  margin-left: auto; 
+  margin-right: 120px; 
+}
+        #top-link{
+          display: flex;
+          margin-left: 110px;
+        }
+        #top-link a{
+          color: black;
+          text-decoration: none;
+          font-weight: 600;
+          
+        }
+        #top-link a:hover{
+            color: rgb(61, 61, 248);
+        }
+        #plus a{
+            color: black;
+            margin-left: 30px;
+            font-size: x-large;
+        }
+        #sell a{
+            margin-left: 20px;
+            font-size: x-large;
+            text-decoration: none;
+            color: black;
+        }
+        #sell a:hover{
+            color: blue;
+            text-decoration: underline;
+        }
+        #log a{
+            color: black;
+            font-size: larger;
+        }       
+         #log a:hover{
+            text-decoration:none ;
+            /* color: black; */
+            font-size: larger;
+            color: blue;
+
+        }
+
+    .topnav {
+      overflow: hidden;
+      border-bottom: 1px solid gray;
+      height: 95px;
+      padding: 20px;
+    }
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    #sec-inp {
+      width: 400px;
+      height: 60px;
+      border-radius: 10px;
+      margin-left: -200px;
+      border: 2px solid rgb(165, 164, 164);
+      padding: 0 15px;
+      font-size: 16px;
+    }
+
+    .right-search-wrapper {
+      position: relative;
+      width: 800px;
+    }
+
+    #first-inp {
+      width: 100%;
+      height: 60px;
+      border-radius: 10px;
+      border: 2px solid rgb(165, 164, 164);
+      padding: 0 110px 0 40px; /* space for icon (left) and button (right) */
+      font-size: 16px;
+    }
+
+    .right-search-wrapper i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: gray;
+      font-size: 18px;
+    }
+
+    .right-search-wrapper button {
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+      /* padding: 8px 15px; */
+      height: 60px;
+      width: 130px;
+      border-radius: 5px;
+      border: none;
+      background-color: rgb(68, 66, 66);
+      color: white;
+      cursor: pointer;
+      font-size: larger;
+    }
+
+    .right-search-wrapper button:hover {
+      background-color: #3a9e3f;
+    }
+
+    @media screen and (max-width: 1100px) {
+      .search-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .right-search-wrapper, #sec-inp {
+        width: 100%;
+      }
+    }
+
+
+
+
+#opt-link{
+    margin-top: 10px;
+    margin-left: 150px;
+    display: flex;
+}
+    #opt-link ul{
+        padding-top: 20px;
+        display: flex;
+        
+    }
+    #opt-link li{
+        list-style-type: none;
+        padding-left: 30px;       
+    }
+    #opt-link a{
+        text-decoration: none;
+        color: black;
+        font-size: 1.7cap;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+    } 
+    #opt-link a:hover{
+        color: blue;
+    }
+    #drop {
+        border: none;
+        font-size: 1.6cap;
+        font-weight: bold;
+        /* outline: none; */
+        text-decoration: none;
+        margin-top: 20px;
+    }
+    #banner{
+        width: 100%;
+        height: 200px;
+        /* border: 2px solid red; */
+        margin-top: 30px;
+    }
+    #banner img{
+   margin-left:120px ;
+    }
+
+    #sell-product{
+        margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* or space-between */
+    gap: 50px; /* Optional spacing between items */
+  }
+  #sell-product a{
+    text-decoration: none;
+    color: black;
+  }
+    #sell-product p{
+        padding-left: 15px;
+        font-size: 1.6cap;
+    font-weight: bold;
+    }
+    #go-to-cart a{
+      font-size: larger;
+   display: inline-block;
+   /* color: blue/; */
+      margin-right:-110px ;
+
+    }
+    #go-to-cart a:hover{
+text-decoration: none;
+color: black;
+    }
+    #log-out{
+      text-decoration: none;
+      outline: none;
+      border: none;
+      font-size: larger;
+    margin-top: 10px;
+    width: 70px;
+    height: 30px;
+    }
+     #log-out:hover{
+         color: blue;
+         cursor: pointer;
+     }
+    #registered{
+      display: flex;
+    }
+    </style>
+</head>
+<body>
+<!-- style="margin-left: 10px; padding: 5px 10px;" -->
+
+
+
+<div id="nav">
+    <div id="nav-left">
+        <div id="logo"><img src="./images/olx-logo" alt=""></div>
+
+      <div id="top-link">   
+  <div style="display: flex; align-items: center; margin-left: -70px;">
+    <img src="./images/car-top1.jpg" alt="" style="width: 50px; border-radius: 100px;">
+    <a href="./vehicles.html" style="font-size: 2cap;">Motors</a>
+  </div>
+
+  <div style="display: flex; align-items: flex-start; gap: 5px; margin-left: 30px;">
+    <img src="./images/properties-top.jpg" alt="" style="width: 40px; border-radius: 100px; margin-top: 10px;">
+    <a href="./property-sell.html" style="margin-top: 20px; font-size: 2cap;">Property</a>
+  </div>
+</div>
+
+    <div id="nav-right">
+<span id="log"><a href="./login.html">Login</a></span>
+<span id="sell"><a href="./sign-up.html">Sign up</a></span>
+<span id="registered">
+
+</span>
+    <div id="go-to-cart">
+<a href="./cart.html"   >🛒 Go to Cart</a>
+</div>
+</div>
+
+</div>    
+</div>    
+
+<div class="topnav">
+  <div class="search-container">
+    <!-- Left search box -->
+    <input type="text" value="Pakistan" id="sec-inp">
+
+    <div class="right-search-wrapper">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search here..." id="first-inp">
+      <button type="submit">Search</button>
+    </div>
+  </div>
+</div>
+
+<div id="opt-link">
+    
+<select id="drop" onchange="navigateToPage(this.value)">
+  <option value="">All Categories</option>
+  <option value="./mobile.html">Mobile</option>
+  <option value="./vehicles.html">Car</option>
+  <option value="./bikes.html">Bike</option>
+  <option value="./vehicles.html">Motors</option>
+  <option value="./camera.html">Camera</option>
+  <option value="./bussiness.html">Bussiness</option>
+  <option value="./services.html">Service</option>
+</select>
+
+<ul> 
+        <li><a href="./mobile.html">Mobile Phones</a></li>
+        <li><a href="./vehicles.html">Cars</a></li>
+        <li><a href="./bikes.html">Motorcyles</a></li>
+        <li><a href="./property-sell.html">House</a></li>
+        <li><a href="./property-rent.html">Land & Plot</a></li>
+        <li><a href="./mobile.html">Tablet</a></li>
+        <li><a href="./services.html">Services</a></li>
+    </ul>
+</div>
+<div id="banner">
+    <img src="./images/banner.webp" alt="">
+</div>
+
+<div id="sell-product">
+    <div><a href="./mobile.html"><img src="./images/product-img1.png" alt="" style="width: 100px;"><p>Mobiles</p></a></div>
+    <div><a href="./vehicles.html"><img src="./images/product-img2.png" alt="" style="width: 100px;"><p>Vehicles</p></a></div>
+    <div><a href="./property-rent.html"><img src="./images/product-img24.png" alt="" style="width: 100px;"><p>Property <br> for Rent</p></a></div>
+    <div><a href="./property-sell.html"><img src="./images/product-img3.png" alt="" style="width: 100px;"><p>Property <br> for Sale</p></a></div>
+    <div><a href="./camera.html"><img src="./images/product-img5.png" alt="" style="width: 100px;"><p>Camera</p></a></div>
+    <div><a href="./bikes.html"><img src="./images/product-img6.png" alt="" style="width: 100px;"><p>Bikes</p></a></div>
+    <div><a href="./bussiness.html"><img src="./images/product-img7.png" alt="" style="width: 100px;"><p>Bussiness, <br>Industrial</p></a></div>
+    <div><a href="./services.html"><img src="./images/product-img8.png" alt="" style="width: 100px;"><p>Services</p></a></div>
+    <div><a href="./job.html"><img src="./images/product-img29.png" alt="" style="width: 100px;"><p>Jobs etc</p></a></div>
+
+  </div>
+
+<script>
+  let loginCheck = localStorage.getItem("justLoggedIn");
+
+  if (loginCheck === "true") {
+    document.getElementById("registered").innerHTML = `
+    <img src="./images/logo.jpeg" alt="Registered" style="width: 70px; border-radius: 50%;" id="logo-registered">    
+    <button onclick="logout()" id="log-out">Logout</button>
+    `;
+  }
+  function logout(){
+  localStorage.removeItem("justLoggedIn");
+location.reload()
+  }
+  function navigateToPage(value){
+    if(value){
+window.location.href = value;
+    }
+  };
+
+
+
+</script>
+
+
+
+</body>
+</html>      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

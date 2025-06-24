@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Details Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #f0f2f5;
+      padding: 40px 20px;
+    }
+
+    .car-card {
+      background: #fff;
+      display: flex;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      max-width: 1200px;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+    }
+
+    .car-left {
+      width: 45%;
+      background: #e8f0fe;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .car-left img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .car-rates {
+      width: 100%;
+    }
+
+    .car-rates li {
+      list-style: none;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      background: #fff;
+      border-left: 5px solid #0d6efd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      font-weight: 500;
+      border-radius: 6px;
+    }
+
+    .car-right {
+      width: 55%;
+      padding: 30px;
+    }
+
+    .car-right h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #222;
+    }
+
+    .car-detail {
+      margin-bottom: 16px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .car-detail i {
+      color: #0d6efd;
+      margin-right: 10px;
+    }
+
+    .description {
+      background: #fff;
+      margin: 30px auto 0;
+      padding: 25px 30px;
+      border-radius: 12px;
+      max-width: 1200px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      line-height: 1.6;
+      font-size: 16px;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .car-card {
+        flex-direction: column;
+      }
+
+      .car-left,
+      .car-right {
+        width: 100%;
+      }
+
+      .description {
+        padding: 20px;
+      }
+    }
+    .home-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 10px 18px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.home-link:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+</head>
+<body>
+<a href="./index.html" class="home-link">← Back to Home</a>
+
+  <div class="car-card">
+    <!-- Left Side -->
+    <div class="car-left">
+      <img src="./images/car-top1.jpg" alt="Car Image" />
+      <ul class="car-rates">
+        <li>Model 2022 - Rs. 3,000,000</li>
+        <li>Model 2023 - Rs. 3,400,000</li>
+        <li>Model 2024 - Rs. 3,800,000</li>
+      </ul>
+    </div>
+
+    <!-- Right Side -->
+    <div class="car-right">
+      <h2>Toyota Corolla Altis Grande 1.8L</h2>
+      <div class="car-detail"><i class="fas fa-car-side"></i> Model: 2024</div>
+      <div class="car-detail"><i class="fas fa-tint"></i> Color: Super White</div>
+      <div class="car-detail"><i class="fas fa-cogs"></i> Transmission: Automatic CVT</div>
+      <div class="car-detail"><i class="fas fa-gas-pump"></i> Fuel Type: Petrol</div>
+      <div class="car-detail"><i class="fas fa-tachometer-alt"></i> Mileage: 14 km/l</div>
+      <div class="car-detail"><i class="fas fa-music"></i> Audio: Touchscreen Display with 6 Speakers</div>
+      <div class="car-detail"><i class="fas fa-star"></i> User Rating: 4.8/5</div>
+    </div>
+  </div>
+
+  <!-- Description Section -->
+  <div class="description">
+    <h3 style="margin-bottom: 15px; color: #111;">Vehicle Overview</h3>
+    The Toyota Corolla Altis Grande is a premium sedan offering smooth performance and elegant design. Equipped with advanced safety features, a luxurious interior, and a fuel-efficient engine, this car is ideal for both city and highway driving. Available in multiple color variants and model years, the Altis remains a top choice for comfort and reliability.
+  </div>
+
+</body>
+</html>
+ 
+
+
+

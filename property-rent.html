@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property for Rent</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #f0f2f5;
+      padding: 40px 20px;
+    }
+
+    .property-card {
+      background: #fff;
+      display: flex;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      max-width: 1200px;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+    }
+
+    .left-section {
+      width: 45%;
+      background: #e8f0fe;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .left-section img {
+      width: 100%;
+      max-height: 400px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .price-list {
+      width: 100%;
+    }
+
+    .price-list li {
+      list-style: none;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      background: #fff;
+      border-left: 5px solid #0d6efd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      font-weight: 500;
+      border-radius: 6px;
+    }
+
+    .right-section {
+      width: 55%;
+      padding: 30px;
+    }
+
+    .right-section h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #222;
+    }
+
+    .property-detail {
+      margin-bottom: 16px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .property-detail i {
+      color: #0d6efd;
+      margin-right: 10px;
+    }
+
+    .description {
+      background: #fff;
+      margin: 30px auto 0;
+      padding: 25px 30px;
+      border-radius: 12px;
+      max-width: 1200px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      line-height: 1.6;
+      font-size: 16px;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .property-card {
+        flex-direction: column;
+      }
+
+      .left-section,
+      .right-section {
+        width: 100%;
+      }
+
+      .description {
+        padding: 20px;
+      }
+    }
+    .home-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 10px 18px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.home-link:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+</head>
+<body>
+    <a href="./index.html" class="home-link">← Back to Home</a>
+
+
+  <div class="property-card">
+    <!-- Left Section -->
+    <div class="left-section">
+      <img src="./images/property-rent.avif" alt="House Image" />
+      <ul class="price-list">
+        <li>1 Bed Apartment - Rs. 35,000/month</li>
+        <li>2 Bed Apartment - Rs. 55,000/month</li>
+        <li>3 Bed Portion - Rs. 75,000/month</li>
+      </ul>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <h2>Luxury Family Apartment - DHA Phase 6, Karachi</h2>
+      <div class="property-detail"><i class="fas fa-bed"></i> Bedrooms: 3</div>
+      <div class="property-detail"><i class="fas fa-bath"></i> Bathrooms: 3</div>
+      <div class="property-detail"><i class="fas fa-ruler-combined"></i> Area: 1800 sq.ft</div>
+      <div class="property-detail"><i class="fas fa-map-marker-alt"></i> Location: DHA Phase 6, Karachi</div>
+      <div class="property-detail"><i class="fas fa-building"></i> Floor: 1st Floor</div>
+      <div class="property-detail"><i class="fas fa-parking"></i> Parking: Reserved</div>
+      <div class="property-detail"><i class="fas fa-wifi"></i> Internet: Available</div>
+      <div class="property-detail"><i class="fas fa-star"></i> User Rating: 4.5/5</div>
+    </div>
+  </div>
+
+  <!-- Description Section -->
+  <div class="description">
+    <h3 style="margin-bottom: 15px; color: #111;">Property Overview</h3>
+    This elegant and spacious apartment is located in one of the most sought-after areas of Karachi. The property offers modern facilities including reserved parking, high-speed internet, standby generator, and 24/7 security. Ideal for families looking for comfort, peace, and proximity to commercial zones. Schools, hospitals, and shopping centers are within walking distance.
+  </div>
+
+</body>
+</html>

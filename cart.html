@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .cart-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      padding: 15px 0;
+    }
+
+    .cart-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .item-details {
+      flex: 1;
+      margin-left: 20px;
+    }
+
+    .item-details h3 {
+      margin: 0 0 10px;
+    }
+
+    .item-details p {
+      margin: 5px 0;
+    }
+
+    .total {
+      text-align: right;
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .empty {
+      text-align: center;
+      color: gray;
+      font-size: 20px;
+      padding: 50px;
+    }
+    .cart-item button {
+  padding: 8px 12px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.cart-item button:hover {
+  background-color: #094cbd;
+}
+
+  </style>
+</head>
+<body>
+
+  <h1>🛒 My Cart</h1>
+  <div class="cart-container" id="cartContainer"></div>
+
+<script>
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cartContainer = document.getElementById("cartContainer");
+
+  function renderCart() {
+    if (cart.length === 0) {
+      cartContainer.innerHTML = `<div class="empty">Your cart is empty 😢</div>`;
+      return;
+    }
+
+    let total = 0;
+    let html = "";
+
+    for (let i = 0; i < cart.length; i++) {
+      let item = cart[i];
+      let itemTotal = item.quantity * parseInt(item.price);
+      total += itemTotal;
+
+      html += `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}">
+          <div class="item-details">
+            <h3>${item.name}</h3>
+            <p>Price: Rs. ${item.price}</p>
+            <p>Quantity: ${item.quantity}</p>
+            <p>Subtotal: Rs. ${itemTotal}</p>
+            <button onclick="increaseQuantity(${i})">+ Add to Cart</button>
+            <button onclick="removeItem(${i})" style="background:red; color:white;">Remove</button>
+          </div>
+        </div>
+      `;
+    }
+
+    html += `
+      <div class="total">Total: Rs. ${total}</div>
+      <div style="text-align: right; margin-top: 10px;">
+        <button onclick="clearCart()" style="background: #444; color: white; padding: 10px 20px; border: none; border-radius: 6px;">Clear Cart 🧹</button>
+      </div>
+    `;
+    
+    cartContainer.innerHTML = html;
+  }
+
+  function increaseQuantity(index) {
+    cart[index].quantity += 1;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1); // Remove 1 item from array at given index
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  }
+
+  function clearCart() {
+    localStorage.removeItem("cart");
+    cart = [];
+    renderCart();
+  }
+
+  renderCart();
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart Page</title>
+  <style>
+    .cart-item {
+      border: 1px solid #ccc;
+      margin: 20px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .cart-item img {
+      width: 150px;
+      height: auto;
+    }
+
+    .cart-item h3 {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Cart Items</h1>
+  <div id="cart-container"></div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let container = document.getElementById("cart-container");
+
+    if (cart.length === 0) {
+      container.innerHTML = "<p>Your cart is empty</p>";
+    } else {
+         let total = 0;
+         let html = "";
+
+
+      for (let i = 0; i < cart.length; i++) {
+        container.innerHTML += `
+          <div class="cart-item">
+            <img src="${cart[i].image}" alt="${cart[i].name}">
+            <div>
+              <h3>${cart[i].name}</h3>
+              <p>Price: Rs ${cart[i].price}</p>
+            </div>
+          </div>
+        `;
+      }
+    }
+  </script>
+</body>
+</html> -->
