@@ -80,10 +80,27 @@
   background-color: #094cbd;
 }
 
+   .home-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 10px 18px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.home-link:hover {
+  background-color: #0056b3;
+}
   </style>
 </head>
 <body>
-
+  
+  <a href="./index.html" class="home-link">← Back to Home</a>
   <h1>🛒 My Cart</h1>
   <div class="cart-container" id="cartContainer"></div>
 
@@ -102,22 +119,22 @@
 
     for (let i = 0; i < cart.length; i++) {
       let item = cart[i];
-      let itemTotal = item.quantity * parseInt(item.price);
+      let itemTotal = item.quantity * item.price;
       total += itemTotal;
 
-      html += `
-        <div class="cart-item">
-          <img src="${item.image}" alt="${item.name}">
-          <div class="item-details">
-            <h3>${item.name}</h3>
-            <p>Price: Rs. ${item.price}</p>
-            <p>Quantity: ${item.quantity}</p>
-            <p>Subtotal: Rs. ${itemTotal}</p>
-            <button onclick="increaseQuantity(${i})">+ Add to Cart</button>
-            <button onclick="removeItem(${i})" style="background:red; color:white;">Remove</button>
+    html += `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}">
+            <div class="item-details">
+              <h3>${item.name}</h3>
+              <p>Price: Rs. ${item.price}</p>
+              <p>Quantity: ${item.quantity}</p>
+              <p>Subtotal: Rs. ${itemTotal}</p>
+              <button onclick="increaseQuantity(${i})">+ Add to Cart</button>
+              <button onclick="removeItem(${i})" style="background:red; color:white;">Remove</button>
+            </div>
           </div>
-        </div>
-      `;
+        `;
     }
 
     html += `
@@ -137,7 +154,7 @@
   }
 
   function removeItem(index) {
-    cart.splice(index, 1); // Remove 1 item from array at given index
+    cart.splice(index, 1); 
     localStorage.setItem("cart", JSON.stringify(cart));
     renderCart();
   }

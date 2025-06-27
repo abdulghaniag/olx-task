@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login page</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         let data = localStorage.getItem("storeData");
@@ -14,7 +15,7 @@
         }
     </script>
     <style>
-    * {
+* {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -110,6 +111,7 @@
 .home-link:hover {
   background-color: #0056b3;
 }
+
     </style>
 </head>
 
@@ -148,7 +150,7 @@ document.getElementById("loginBtn").addEventListener("click", function () {
     return;
   }
 
-  // 🔸 Get saved users
+  //  Get saved users
   let savedData = JSON.parse(localStorage.getItem("storeData")) || [];
   let found = false;
 
@@ -162,7 +164,7 @@ document.getElementById("loginBtn").addEventListener("click", function () {
     }
   }
 
-  // 🔸 If login matched
+  //  If login matched
   if (found) {
     localStorage.setItem("justLoggedIn", "true");
     localStorage.setItem("isLoggedIn", "true"); 
@@ -176,7 +178,6 @@ document.getElementById("loginBtn").addEventListener("click", function () {
     //  Redirect to product page if needed
     setTimeout(() => {
       let redirectTo = localStorage.getItem("redirectBack");
-
       if (redirectTo) {
         localStorage.removeItem("redirectBack");
         window.location.href = redirectTo;
@@ -185,7 +186,7 @@ document.getElementById("loginBtn").addEventListener("click", function () {
       }
     }, 1600);
   } else {
-    // 🔸 If login fail
+    //  If login fail
     Swal.fire({
       icon: "error",
       title: "Oops...",
@@ -194,118 +195,11 @@ document.getElementById("loginBtn").addEventListener("click", function () {
     });
   }
 
-  // 🔸 Clear fields
+  //  Clear fields
   document.getElementById("loginEmail").value = "";
   document.getElementById("loginPassword").value = "";
 });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <script>
-
-document.getElementById("loginBtn").addEventListener("click",function(){
-let loginEmail = document.getElementById("loginEmail").value.trim();
-let loginPassword = document.getElementById("loginPassword").value.trim();
-
-if(!loginEmail || !loginPassword){
-// alert("Fill in all feild")
-    Swal.fire({
-  icon: "error",
-  title: "Oops...",
-  text: "Please fill in all fields",
-  footer: '<a href="#">Why do I have this issue?</a>'
-}); 
-}
-
-let savedData  = JSON.parse(localStorage.getItem("storeData")) || [] ;
-let found = false;
-
-
-for(let i=0; i< savedData.length; i++){
-
-if(savedData[i].email == loginEmail  && 
-   savedData[i].password == loginPassword){
-    found = true;
-    break;
-}   
-};
-
-if(found){
-    localStorage.setItem("justLoggedIn", "true");
-
-    Swal.fire({
-  title: "Login Successfull!",
-  icon: "success",
-  draggable: true
-});
- setTimeout(() => {
-      window.location.href = "index.html";
-    }, 1600);
-}else{
-    Swal.fire({
-  icon: "error",
-  title: "Oops...",
-  text: "Incorrect email or Password!",
-  footer: '<a href="#">Why do I have this issue?</a>'
-}); 
-}
-
-
-document.getElementById("loginEmail").value = "";
-document.getElementById("loginPassword").value = "";
-
-});
-
-
-
-    </script> -->
 </body>
 
 </html>
