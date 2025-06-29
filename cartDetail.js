@@ -8,7 +8,7 @@
         image: "./images/mobile-sell.avif" , 
         images : [
           "./images/iphone6.avif",
-            "./images/iphone19.avif" ,
+            // "./images/iphone19.avif" ,
             "./images/iphone14.avif" ,
             "./images/iphone20.avif" ,
             "./images/iphone22.avif" ,
@@ -24,7 +24,7 @@
         ram : " RAM: 8 GB",
         image: "./images/cardis.avif",
         images : [
-            "./images/car3.avif" ,
+            // "./images/car3.avif" ,
             "./images/car7.avif" ,
             "./images/car6.avif" ,
             "./images/car1.avif" , 
@@ -40,12 +40,12 @@
         ram : " RAM: 8 GB",
         image: "./images/property-rent.avif",
         images : [
+          "./images/rent6.avif",
           "./images/rent1.avif",
           "./images/rent2.avif",
           "./images/rent3.avif",
-          "./images/rent4.avif",
-          "./images/rent5.avif",
-          "./images/rent6.avif"
+          "./images/rent4.avif"
+          // "./images/rent5.avif"
         ]
       },
       {
@@ -57,7 +57,7 @@
         image: "./images/property-sell.jpg",
         images : [
               "./images/sale1.avif",
-              "./images/sale2.avif",
+              // "./images/sale2.avif",
               "./images/sale3.avif",
               "./images/sale4.avif",
               "./images/sale5.avif",
@@ -72,8 +72,8 @@
         ram : " RAM: 8 GB",
         image: "./images/camrera-sell.jpg",
         images : [
-              "./images/camera7.avif",
-              "./images/camera8.avif",
+          "./images/camera8.avif",
+              // "./images/camera7.avif",
               "./images/camera3.avif",
               "./images/camera4.avif",
               "./images/camera5.avif",
@@ -90,7 +90,7 @@
         images : [
              "./images/filter1.webp",
              "./images/filter2.webp",
-             "./images/filter3.webp",
+            //  "./images/filter3.webp",
              "./images/filter4.webp",
              "./images/filter7.webp",
              "./images/filter8.webp",
@@ -105,7 +105,7 @@
         ram : " RAM: 8 GB",
         image: "./images/bike--sell.jpg",
         images : [
-              "./images/bike3.avif",
+              // "./images/bike3.avif",
               "./images/bike4.avif",
               "./images/bike5.avif",
               "./images/bike2.avif",
@@ -125,7 +125,7 @@
               "./images/job1.avif",
               "./images/job3.avif",
               "./images/job4.avif",
-              "./images/job5.avif",
+              // "./images/job5.avif",
               "./images/job6.avif"
         ]
       },
@@ -137,7 +137,7 @@
         ram : " RAM: 8 GB",
         image: "./images/services-sell.jpg",
         images : [
-          "./images/service4.avif",
+          // "./images/service4.avif",
           "./images/service1.avif",
           "./images/service2.avif",
           "./images/service3.avif",
@@ -146,7 +146,6 @@
         ]
       }
     ];
-
 
 let newProducts = JSON.parse(localStorage.getItem("allProduct")) || [];
 

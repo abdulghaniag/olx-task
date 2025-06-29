@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Add Product</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     body {
       background: #f9fafb;
@@ -67,6 +68,72 @@ margin-bottom: 10px;
 .home-link:hover {
   background-color: #0056b3;
 }
+
+
+
+
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .form-box {
+    padding: 20px;
+    margin: 20px 10px;
+  }
+
+  .form-box h2 {
+    font-size: 22px;
+  }
+
+  label {
+    font-size: 15px;
+  }
+
+  input,
+  textarea {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .home-link {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-box {
+    padding: 15px;
+  }
+
+  input,
+  textarea {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .form-box h2 {
+    font-size: 20px;
+  }
+
+  .home-link {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
     
   </style>
 </head>
@@ -114,11 +181,17 @@ function saveProduct(){
   let price = document.getElementById("price").value.trim();
   let description = document.getElementById("description").value.trim();
   let condition = document.getElementById("condition").value.trim();
-   let image = document.getElementById("image").value.trim();
+  let image = document.getElementById("image").value.trim();
    
       
    if(!name || !tittle || !price || !description || !condition || !image){
-    alert("Please fill all feild");
+    Swal.fire({
+  icon: "error",
+  title: "Oops...",
+  text: "Please fill all feild!",
+  footer: '<a href="#">Why do I have this issue?</a>'
+});
+    // alert("Please fill all feild");
     return; 
 }
 
@@ -139,14 +212,22 @@ let imageArray = image.split(",").map(img => img.trim().replace(/['"]+/g, ""));
 
     // ab jo sara data local storage main save ho ga us ki key "allProduct" hai 
  localStorage.setItem("selectProduct" ,JSON.stringify(newProduct));
-alert("Product Saved Successfully")
-window.location.href = "index.html"
+ 
+
+Swal.fire({
+  icon: "success",
+  title: "Product Saved Successfully!",
+  showConfirmButton: false,
+  timer: 1500 // 2 seconds
+});
+
+setTimeout(() => {
+  window.location.href = "index.html";
+}, 1500);
+
+// alert("Product Saved Successfully")
+// window.location.href = "index.html"
 }
-
-
-
-
-
 </script>
 
 </body>

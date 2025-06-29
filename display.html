@@ -17,107 +17,212 @@
       background-color: #f3f4f6;
       padding: 40px;
     }
-    .container {
-      display: flex;
-      max-width: 1200px;
-      margin: auto;
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-    }
-    .left {
-      flex: 1;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    #mainImg {
-      width: 100%;
-      max-width: 500px;
-      height: 350px;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-    }
-    #mainImg:hover {
-      transform: scale(1.02);
-    }
-    .thumbnails {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      width: 100%;
-      max-width: 500px;
-    }
-    .thumbnails img {
-      width: 140px;
-      height: 90px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid #ccc;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-    .thumbnails img:hover {
-      border-color: #2563eb;
-      transform: scale(1.05);
-    }
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 5%;
+  background-color: #f9f9f9;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+#left {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+ #left .main-img {
+  width: 100%;
+  height: 400px; /* Fixed height for consistency */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+#thumbs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-    .right {
-      flex: 1;
-      padding: 30px 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .right h2 {
-      font-size: 28px;
-      margin-bottom: 10px;
-      color: #111827;
-    }
-    .right h3 {
-      font-size: 20px;
-      margin-bottom: 15px;
-      color: #6b7280;
-    }
-    .right p {
-      font-size: 22px;
-      font-weight: bold;
-      color: #10b981;
-      margin-bottom: 25px;
-    }
-    .right button {
-      width: 180px;
-      padding: 12px 20px;
-      background: #3b82f6;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .right button:hover {
-      background: #2563eb;
-    }
+ #thumbs img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
 
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      .right, .left {
-        width: 100%;
-      }
-      .thumbnails img {
-        width: 100px;
-        height: 70px;
-      }
-    }
+
+#thumbs img:hover {
+  border: 2px solid #4CAF50;
+}
+
+/* ===== Right Side (Details) ===== */
+#right {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#right h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #222;
+  font-weight: 600;
+}
+
+#right h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #555;
+}
+
+#right p {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #444;
+  line-height: 1.5;
+}
+
+#right button {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  font-size: 18px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(76, 175, 80, 0.3);
+}
+
+#right button:hover {
+  background: linear-gradient(135deg, #66BB6A, #388E3C);
+  transform: scale(1.02);
+}
+
+@media (max-width: 992px) {
+  #container {
+    flex-direction: column;
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  #left, #right {
+    max-width: 100%;
+  }
+
+  #left .main-img {
+    height: 300px; /* reduce image height for small screens */
+  }
+
+  #thumbs {
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  #thumbs img {
+    width: 70px;
+    height: 70px;
+  }
+
+  #right {
+    padding: 20px;
+  }
+
+  #right h2 {
+    font-size: 26px;
+  }
+
+  #right h3 {
+    font-size: 22px;
+  }
+
+  #right p {
+    font-size: 16px;
+  }
+
+  #right button {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  #container {
+    padding: 20px 15px;
+  }
+
+  #left .main-img {
+    height: 240px;
+  }
+
+  #thumbs img {
+    width: 60px;
+    height: 60px;
+  }
+
+  #right h2 {
+    font-size: 22px;
+  }
+
+  #right h3 {
+    font-size: 18px;
+  }
+
+  #right p {
+    font-size: 15px;
+  }
+
+  #right button {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+}
+
+.product-heading {
+ margin-top: -30px;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 20px;
+  background: linear-gradient(to right, #f8fafc, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.product-heading h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1f2937;
+  /* margin-bottom: 10px; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.product-heading p {
+  font-size: 17px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
   </style>
 
 
@@ -127,7 +232,11 @@
 
     <div id="productDetail"></div>
 
-
+    <div class="product-heading">
+  <h1>Product Details & Specifications</h1>
+  <p>Everything you need to know before adding to cart</p>
+</div>
+  
 <div id="container">
     <div id="left">
         <img id="mainImg" class="main-img" src="" alt="product Image">
@@ -135,8 +244,6 @@
     </div>
 
     <div id="right">
-        <!-- <img src= alt=""> -->
-         <!-- <img src= alt=""> -->
         <h2 id="productName"></h2>
         <h3 id="productTittle"></h3>
         <p id="productPrice"></p>
@@ -182,20 +289,40 @@
 
       if(!storeData){
         localStorage.setItem("redirectBack" , "display.html");
-        alert("please Sign up first");
-        window.location.href = "sign-up.html"
-        return;
-      }
+
+
+
+   Swal.fire({
+      icon: "warning",
+      title: "Please Sign Up First",
+      text: "You need to create an account before adding to cart.",
+      timer: 1500, // Alert will auto close in 1.5 sec
+      showConfirmButton: false
+    });
+
+    setTimeout(() => {
+      window.location.href = "sign-up.html";
+    }, 1500); // Wait for alert to finish before redirecting
+    return;
+  }
       if(!isLoggedIn){
         localStorage.setItem("redirectBack" , "display.html");
-        alert("please Login First");
-        window.location.href = "login.html";
-        return;
-      }
+         Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Please Login your account!",
+      timer: 1500,
+      showConfirmButton: false
+    });
+
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 1500);
+    return;
+  }
+
 
         let cart = JSON.parse(localStorage.getItem("cart")) || [] ;
-
-
         // let price = parseInt(data.price);
         let cleanPrice = parseInt(data.price.toString().replace(/\D/g, ""));
         let existing = cart.find(item => item.name === data.name);
