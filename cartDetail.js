@@ -1,6 +1,5 @@
-// alert("yes")
-let product = [
-      {
+   let hardcodedProducts = [
+ {
         name: "Apple iPhone",
         tittle: "15 Pro Max",
         price: "Rs. 420,000",
@@ -52,7 +51,7 @@ let product = [
       {
         name: "Property for Sale",
         tittle: "10 Marla House",
-        price: "Rs. 1.8 Crore",
+        price: "Rs. 18000000",
          display : " Display: 6.7 Super Retina XDR",
         ram : " RAM: 8 GB",
         image: "./images/property-sell.jpg",
@@ -148,23 +147,34 @@ let product = [
       }
     ];
 
-let show = document.getElementById("show")
-for(let i=0; i< product.length; i++){
-show.innerHTML += `
-<div id="carddis">
-  <img src="${product[i].image}">
-  <h2>${product[i].name}</h2>
-  <h3>${product[i].tittle}</h3>
-  <p>${product[i].price}</p>
-  <p>${product[i].display}</p>
-  <p>${product[i].ram}</p>
-  <button id="addcart" onclick="viewDetail(${i})">View Details</button>
-</div>
-`;
+
+let newProducts = JSON.parse(localStorage.getItem("allProduct")) || [];
+
+// Dono ko combine karwaya hai 
+let allCombined = [...hardcodedProducts, ...newProducts];
+
+//  jo card Show krwa rha hon
+let show = document.getElementById("show");
+show.innerHTML = "";
+
+for (let i = 0; i < allCombined.length; i++) {
+  show.innerHTML += `
+    <div id="carddis">
+      <img src="${allCombined[i].image}">
+      <h2>${allCombined[i].name}</h2>
+      <h3>${allCombined[i].tittle}</h3>
+      <p>${allCombined[i].price}</p>
+      <p>${allCombined[i].display}</p>
+      <p>${allCombined[i].ram}</p>
+      <button onclick="viewDetail(${i})" style="margin: 0 16px 16px; padding: 10px 0; width: calc(100% - 32px); border: none; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; font-size: 15px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: background 0.3s ease;">View Details</button>
+    </div>
+  `;
 }
-function viewDetail(index){
-    let selectProduct = product[index]
-localStorage.setItem("selectProduct" , JSON.stringify(selectProduct));
-window.location.href = "display.html"
-console.log(product);
+
+//  View Detail Function
+function viewDetail(index) {
+  let selected = allCombined[index];
+  localStorage.setItem("selectProduct", JSON.stringify(selected));
+  window.location.href = "display.html";
 }
+

@@ -73,80 +73,116 @@
 
         }
 
-    .topnav {
-      overflow: hidden;
-      border-bottom: 1px solid gray;
-      height: 95px;
-      padding: 20px;
-    }
-    .search-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-    }
-    #sec-inp {
-      width: 400px;
-      height: 60px;
-      border-radius: 10px;
-      margin-left: -200px;
-      border: 2px solid rgb(165, 164, 164);
-      padding: 0 15px;
-      font-size: 16px;
-    }
 
-    .right-search-wrapper {
-      position: relative;
-      width: 800px;
-    }
 
-    #first-inp {
-      width: 100%;
-      height: 60px;
-      border-radius: 10px;
-      border: 2px solid rgb(165, 164, 164);
-      padding: 0 110px 0 40px; /* space for icon (left) and button (right) */
-      font-size: 16px;
-    }
 
-    .right-search-wrapper i {
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: gray;
-      font-size: 18px;
-    }
 
-    .right-search-wrapper button {
-      position: absolute;
-      right: 0px;
-      top: 50%;
-      transform: translateY(-50%);
-      /* padding: 8px 15px; */
-      height: 60px;
-      width: 130px;
-      border-radius: 5px;
-      border: none;
-      background-color: rgb(68, 66, 66);
-      color: white;
-      cursor: pointer;
-      font-size: larger;
-    }
 
-    .right-search-wrapper button:hover {
-      background-color: #3a9e3f;
-    }
 
-    @media screen and (max-width: 1100px) {
-      .search-container {
-        flex-direction: column;
-        gap: 15px;
-      }
-      .right-search-wrapper, #sec-inp {
-        width: 100%;
-      }
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .navbar {
+  background: #ffffff;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+
+/* Left input (small) */
+#sec-inp {
+  width: 140px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* Main search group */
+.search-group {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 600px;
+  gap: 10px;
+}
+
+#main-search {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-btn {
+  padding: 10px 18px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.search-btn:hover {
+  background-color: #0e9f6e;
+}
+
+/* Add product button */
+.add-btn {
+  padding: 12px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.add-btn:hover {
+  background-color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-group {
+    width: 100%;
+  }
+
+  #main-search {
+    width: 100%;
+  }
+
+  .add-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
 #opt-link{
     margin-top: 10px;
     margin-left: 150px;
@@ -232,33 +268,6 @@ color: black;
     #registered{
       display: flex;
     }
-    /* #carddis{
-
-    }    #carddis img{
-      width: 180px;
-      height: 280px;
-    } */
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     #show {
   display: flex;
   flex-wrap: wrap;
@@ -344,6 +353,55 @@ color: black;
   }
 }
 
+.form-container {
+  max-width: 600px;
+  background: white;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #1f2937;
+  text-align: center;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #374151;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 16px;
+}
+.form-group textarea {
+  resize: vertical;
+  height: 100px;
+}
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.form-container button:hover {
+  background-color: #059669;
+}
+
     </style>
 </head>
 <body>
@@ -379,17 +437,16 @@ color: black;
 </div>    
 </div>    
 
-<div class="topnav">
-  <div class="search-container">
-    <!-- Left search box -->
-    <input type="text" value="Pakistan" id="sec-inp">
+<div class="navbar">
+  <input type="text" id="sec-inp" placeholder="Location" />
 
-    <div class="right-search-wrapper">
-      <i class="fas fa-search"></i>
-      <input type="text" placeholder="Search here..." id="first-inp">
-      <button type="submit">Search</button>
-    </div>
+  <div class="search-group">
+    <input type="text" id="main-search" placeholder="Search for products..." />
+    <button class="search-btn">Search</button>
   </div>
+
+<button class="add-btn" onclick="addProduct()">+ Add Product</button>
+
 </div>
 
 <div id="opt-link">
@@ -432,12 +489,15 @@ color: black;
 
   </div>
 
-<div id="show" class="product-container"></div>
-
+<div id="show" class="product-container">
 
 </div>
 
+</div>
+
+
 <script>
+
   let loginCheck = localStorage.getItem("justLoggedIn");
 
   if (loginCheck === "true") {
@@ -459,25 +519,89 @@ window.location.href = value;
 
 
 
+
+  function addProduct(){
+    let checkLogin = localStorage.getItem("isLoggedin");
+    let checkSign = localStorage.getItem("justLoggedIn");
+    if(checkLogin == "true" || checkSign == "true"){
+      // alert("Add to Product Contniue");
+     window.location.href= "addProduct.html";
+    }else{
+      alert("Please first Login & sign-up");
+
+       setTimeout(() => {
+      window.location.href = "login.html";
+    }, 100);
+      // return false;
+    }
+    // console.log("Yes");
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+// function displayProduct(){
+
+//   let product = JSON.parse(localStorage.getItem("allProduct")) || [];
+//   console.log(product);
+  
+//   let container = document.getElementById("show");   
+
+//   container.innerHTML = "";
+
+//   for(let i=0; i<product.length; i++){
+//     // let item = product[i];
+//   //  console.log(item);
+   
+//     container.innerHTML += `
+// <div id="carddis">
+//   <img src="${product[i].image}" alt="Product Image">
+//  <h2>${product[i].name}</h2>
+//  <h3>${product[i].tittle}</h3>
+//  <p>${product[i].price}</p>
+//  <p>${product[i].display}</p>
+//   <p>${product[i].ram}</p>
+//   <button id="addcart" onclick="viewDetail(${i})">View Details</button>
+// </div>
+// `;  
+//   };
+// }
+
+
+// function viewDetail(index){
+//   let allProducts = JSON.parse(localStorage.getItem("allProduct")) || [];
+
+//   let selectProduct = allProducts[index];
+//   localStorage.setItem("selectProduct", JSON.stringify(selectProduct));
+  
+//   window.location.href = "display.html";
+// }
+
+
+// displayProduct();
+
+
 </script>
 <script src="cartDetail.js"></script>
 
 
 </body>
 </html>      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

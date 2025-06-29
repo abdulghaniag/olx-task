@@ -123,6 +123,11 @@
 
 </head>
 <body>
+
+
+    <div id="productDetail"></div>
+
+
 <div id="container">
     <div id="left">
         <img id="mainImg" class="main-img" src="" alt="product Image">
@@ -147,6 +152,7 @@
    let mainImg =  document.getElementById("mainImg");
    let thumbsDiv = document.getElementById("thumbs");
 
+
    if(data.images && Array.isArray(data.images) && data.images.length > 0){
     mainImg.src= data.images[0];
 
@@ -169,7 +175,10 @@
 
     function addToCart(){
         let storeData = localStorage.getItem("storeData");
+        console.log(storeData);
+        
         let isLoggedIn = localStorage.getItem("isLoggedIn");
+        console.log(isLoggedIn);
 
       if(!storeData){
         localStorage.setItem("redirectBack" , "display.html");
@@ -186,15 +195,17 @@
 
         let cart = JSON.parse(localStorage.getItem("cart")) || [] ;
 
-  let existing = cart.find(item => item.name === data.name);
-  let price = +data.price.replace("Rs.", "").trim();
+
+        // let price = parseInt(data.price);
+        let cleanPrice = parseInt(data.price.toString().replace(/\D/g, ""));
+        let existing = cart.find(item => item.name === data.name);
   if(existing){
     existing.quantity += 1;
   }else{
     cart.push({
       name : data.name,
       image: Array.isArray(data.images) ? data.images[0] : data.images,
-      price: price,
+      price: cleanPrice,
       quantity : 1
     });
   }
@@ -212,6 +223,8 @@
         window.location.href = "cart.html";
     }, 1600);
 };
+
+
 </script>
 
 </body>
