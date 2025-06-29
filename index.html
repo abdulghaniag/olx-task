@@ -381,14 +381,15 @@ color: black;
 
 
 
-
-/* Tablet: max-width 768px */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   #nav {
     flex-direction: column;
     align-items: center;
     height: auto;
-    gap: 10px;
+  }
+
+  #logo img {
+    margin-left: 0;
   }
 
   #nav-left {
@@ -405,22 +406,25 @@ color: black;
 
   #top-link > div {
     margin-left: 0 !important;
+    margin-top: 10px;
   }
 
   #nav-right {
     margin: 0;
     justify-content: center;
-    gap: 15px;
+    flex-direction: column;
+    align-items: center;
   }
 
   .navbar {
     flex-direction: column;
-    align-items: stretch;
     gap: 15px;
+    align-items: stretch;
   }
 
   .search-group {
     width: 100%;
+    flex-direction: column;
   }
 
   #main-search,
@@ -433,11 +437,11 @@ color: black;
     flex-direction: column;
     align-items: center;
     margin-left: 0;
+    text-align: center;
   }
 
   #opt-link ul {
     flex-direction: column;
-    align-items: center;
     padding: 0;
   }
 
@@ -447,51 +451,21 @@ color: black;
   }
 
   #banner img {
-    margin-left: 0;
     width: 100%;
     height: auto;
+    margin-left: 0;
+    display: block;
   }
 
   #sell-product {
-    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     padding: 10px;
   }
 
-  #show {
-    padding: 20px;
-    gap: 20px;
-  }
-
-  #carddis {
-    width: 90%;
-  }
-}
-
-/* Mobile: max-width 576px */
-@media (max-width: 576px) {
-  #nav,
-  #nav-left,
-  #top-link,
-  #nav-right {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #logo img {
-    margin-left: 0;
-  }
-
-  #drop {
-    width: 90%;
-    margin: 10px 0;
-  }
-
-  #sell-product {
-    gap: 20px;
-  }
-
   #sell-product div {
-    width: 45%;
+    width: 40%;
     text-align: center;
   }
 
@@ -500,12 +474,24 @@ color: black;
   }
 
   #show {
-    padding: 10px;
-    gap: 15px;
+    padding: 15px;
+    gap: 20px;
   }
 
   #carddis {
     width: 100%;
+    max-width: 300px;
+  }
+}
+ 
+@media (max-width: 576px) {
+  #sell-product div {
+    width: 100%;
+  }
+
+  #drop {
+    width: 90%;
+    margin-top: 10px;
   }
 
   .form-container {
@@ -513,56 +499,7 @@ color: black;
     margin: 30px 10px;
   }
 }
- #userMenu {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    background-color: #f3f4f6;
-    border: 1px solid #ccc;
-    cursor: pointer;
-  }
 
-
-
-
-  #userDropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    #userAvatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    #dropdownMenu {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      padding: 10px;
-      z-index: 10;
-    }
-
-    #dropdownMenu button {
-      background: none;
-      border: none;
-      color: #333;
-      padding: 8px 12px;
-      cursor: pointer;
-      width: 100%;
-      text-align: left;
-      font-size: 16px;
-    }
-
-    #dropdownMenu button:hover {
-      background-color: #f0f0f0;
-    }
     </style>
 </head>
 <body>
@@ -575,12 +512,12 @@ color: black;
       <div id="top-link">   
   <div style="display: flex; align-items: center; margin-left: -70px;">
     <img src="./images/car-top1.jpg" alt="" style="width: 50px; border-radius: 100px;">
-    <a href="./vehicles.html" style="font-size: 2cap;">Motors</a>
+    <a href="" style="font-size: 2cap;">Motors</a>
   </div>
 
   <div style="display: flex; align-items: flex-start; gap: 5px; margin-left: 30px;">
     <img src="./images/properties-top.jpg" alt="" style="width: 40px; border-radius: 100px; margin-top: 10px;">
-    <a href="./property-sell.html" style="margin-top: 20px; font-size: 2cap;">Property</a>
+    <a href="" style="margin-top: 20px; font-size: 2cap;">Property</a>
   </div>
 </div>
 
@@ -636,13 +573,13 @@ color: black;
 </select>
 
 <ul> 
-        <li><a href="./mobile.html">Mobile Phones</a></li>
-        <li><a href="./vehicles.html">Cars</a></li>
-        <li><a href="./bikes.html">Motorcyles</a></li>
-        <li><a href="./property-sell.html">House</a></li>
-        <li><a href="./property-rent.html">Land & Plot</a></li>
-        <li><a href="./mobile.html">Tablet</a></li>
-        <li><a href="./services.html">Services</a></li>
+        <li><a href="">Mobile Phones</a></li>
+        <li><a href="">Cars</a></li>
+        <li><a href="">Motorcyles</a></li>
+        <li><a href="">House</a></li>
+        <li><a href="">Land & Plot</a></li>
+        <li><a href="">Tablet</a></li>
+        <li><a href="">Services</a></li>
     </ul>
 </div>
 <div id="banner">
@@ -693,18 +630,7 @@ function toggleDropdown() {
 
     location.reload();
   }
-
-
-  // if (loginCheck === "true") {
-  //   document.getElementById("registered").innerHTML = `
-  //   <img src="https://www.w3schools.com/howto/img_avatar.png" style="width: 40px; height: 40px; border-radius: 50%;" alt="User Avatar">   
-  //   <button onclick="logout()" id="log-out">Logout</button>
-  //   `;
-  // }
-
-  // function logout(){
- 
-  // }
+  
   function navigateToPage(value){
     if(value){
 window.location.href = value;

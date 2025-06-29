@@ -117,6 +117,7 @@
 
 <body>
     <div>
+      <div id="adminLogin"><a href="#" class="home-link" onclick="adminLogin()">User Admin Login</a></div>
     <a href="./index.html" class="home-link">← Back to Home</a>
     <a href="./sign-up.html" class="home-link"> Back to Sign up →</a>
 
@@ -136,6 +137,13 @@
     </div>
 
     <script> 
+    
+    function adminLogin(){
+      window.location.href = "admin.html"
+    }
+
+
+
 document.getElementById("loginBtn").addEventListener("click", function () {
   let loginEmail = document.getElementById("loginEmail").value.trim();
   let loginPassword = document.getElementById("loginPassword").value.trim();
@@ -168,6 +176,7 @@ document.getElementById("loginBtn").addEventListener("click", function () {
   if (found) {
     localStorage.setItem("justLoggedIn", "true");
     localStorage.setItem("isLoggedIn", "true"); 
+    localStorage.setItem("loggedInUser" , loginEmail)
 
     Swal.fire({
       title: "Login Successful!",

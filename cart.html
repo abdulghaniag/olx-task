@@ -135,7 +135,9 @@
   <div class="cart-container" id="cartContainer"></div>
 
 <script>
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let email = localStorage.getItem("loggedInUser");
+  let allCarts = JSON.parse(localStorage.getItem("allCarts")) || {};
+  let cart = allCarts[email] || [];
   let cartContainer = document.getElementById("cartContainer");
 
   function renderCart() {
@@ -162,12 +164,10 @@
               <p>Subtotal: Rs. ${itemTotal}</p>
               <button onclick="increaseQuantity(${i})">+ Add to Cart</button>
               <button onclick="removeItem(${i})" style="background:red; color:white;">Remove</button>
-
             </div>
           </div>
         `;
     }
-
     html += `
       <div class="total">Total: Rs. ${total}</div>
       <div style="text-align: right; margin-top: 10px;">
@@ -181,28 +181,35 @@
 
   function increaseQuantity(index) {
     cart[index].quantity += 1;
-    localStorage.setItem("cart", JSON.stringify(cart));
+    saveCart();
     renderCart();
+    // localStorage.setItem("cart", JSON.stringify(cart));
   }
 
   function removeItem(index) {
     cart.splice(index, 1); 
-    localStorage.setItem("cart", JSON.stringify(cart));
+    // localStorage.setItem("cart", JSON.stringify(cart));
+    saveCart();
     renderCart();
   }
 
   function clearCart() {
-    localStorage.removeItem("cart");
     cart = [];
+    saveCart();
     renderCart();
+    // localStorage.removeItem("cart");
   }
 
-  renderCart();
-
+  function saveCart(){
+    allCarts[email] = cart;
+    localStorage.setItem("allCarts",JSON.stringify(allCarts));
+  }
 
   function buyNow(){
-    window.location.href = "buyNow.html"
+    window.location.href = "buyNow.html";
   }
+  renderCart();
+
 </script>
 
 

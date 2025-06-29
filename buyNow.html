@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Buy Now</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -110,7 +111,7 @@
 </head>
 <body>
 
-  <form class="form-container">
+  <form class="form-container" id="orderForm">
     <h2>Complete Your Purchase</h2>
 
     <div class="form-group">
@@ -138,10 +139,27 @@
       </select>
     </div>
 
-    <button type="submit">Place Order</button>
+    <button type="submit" onclick="placeOrder(event)">Place Order</button>
 
         <a href="./index.html" class="home-link">← Back to Home</a>
   </form>
+
+  <script>
+
+    function placeOrder(event){
+     event.preventDefault()
+   Swal.fire({
+    icon: 'success',
+    title: 'Order Confirmed!',
+    text: '✅ Your package will be delivered in 3–5 business days.',
+    confirmButtonText: 'OK',
+    allowOutsideClick: false,
+    allowEscapeKey: false
+  }).then(() => {
+    document.getElementById("orderForm").reset();
+  }); 
+    }
+  </script>
 
 </body>
 </html>
